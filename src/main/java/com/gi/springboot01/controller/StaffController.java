@@ -10,12 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/StaffController")
 public class StaffController {
-
     @Autowired
     private StaffService staffService;
+
 
     @RequestMapping("/getStaffByStaffId/{staffId}")
     public Staff getStaffByStaffId(@PathVariable String staffId) {
         return staffService.getStaffByStaffId(staffId);
+    }
+
+    @RequestMapping("/deleteStaffByStaffId/{staffId}")
+    public Staff deleteStaffByStaffId(@PathVariable String staffId) {
+            return staffService.deleteStaffByStaffId(staffId);
     }
 }

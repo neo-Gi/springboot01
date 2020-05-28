@@ -13,4 +13,8 @@ public class StaffService {
     public Staff getStaffByStaffId(String staffId) {
         return staffDao.getStaffByStaffId(staffId);
     }
+
+    public Staff deleteStaffByStaffId(String StaffId){
+        return  staffDao.deleteStaffByStaffId(StaffId);
+    }
 }

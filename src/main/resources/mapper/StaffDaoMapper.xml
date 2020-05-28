@@ -8,4 +8,9 @@
         from sys_staff
         where staff_id = ${staffId}
     </select>
+    <delete id="deleteStaffByStaffId"  parameterType="java.lang.String">
+        delete
+        from sys_staff
+        where staff_id = ${staffId}
+    </delete>
 </mapper>
