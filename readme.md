@@ -1,1 +1,4 @@
 # 这是第一个springboot项目
+1.从controller层先写,然后进入service层,最后进入dao层
+2.controller里面是浏览器访问路径,service层是连接controller层与dao层,dao层是连接数据库写sql的地方
+3.sql语句写在Mapper.xml里面 
