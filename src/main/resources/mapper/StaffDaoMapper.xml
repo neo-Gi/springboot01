@@ -13,4 +13,27 @@
         from sys_staff
         where staff_id = ${staffId}
     </delete>
+    <!--以下功能未测试-->
+    <insert id="insertStaff" useGeneratedKeys="true" keyProperty="staffID" keyColumn="staff_id"
+            parameterType="com.gi.springboot01.domain.Staff">
+        insert into
+        sys_staff(staff_type,staff_state,login_type,staff_name,staff_pinyin,staff_code,staff_phone,staff_email,
+        wx_open_id,wx_usercode,wx_qrcode,headimg_url,sex_type,operator_id,time_create,time_update,remark,staff_password)
+        values (${staffType},${staffState},${loginType},${staffName},${staffPinyin},${staffCode},${staffPhone},
+        ${staffEmail},${wxOpenId},${wxUsercode},${wxQrcode},${headimgUrl},${sexType},${operatorId},${timeCreate},
+        ${timeUpdate},${remark},${staffPassword})
+    </insert>
+    <update id="updateStaff" parameterType="com.gi.springboot01.domain.Staff">
+        update sys_staff
+        <set>
+        /*演示一条后面还有很多*/
+            <if test="staff_type != null"> staff_type=${staffType} </if>
+        </set>
+    </update>
+    <select id="staffList" parameterType="com.gi.springboot01.domain.Staff">
+        select staff_type,staff_state,staff_name
+        from sys_staff
+        desc
+    </select>
+    <!--以上功能未测试-->
 </mapper>
